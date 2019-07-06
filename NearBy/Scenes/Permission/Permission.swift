@@ -46,4 +46,20 @@ enum Permission {
             return "Not now"
         }
     }
+
+    /// Wheter or not this permission is required for this application to run.
+    var isNecessarryForApplication: Bool {
+        switch self {
+        case .location:
+            return true
+        }
+    }
+
+    /// Description text for not granting user for permissions.
+    var permissionIsNeededText: String {
+        switch self {
+        case .location:
+            return "In order to use this application you should grant location permissions."
+        }
+    }
 }
