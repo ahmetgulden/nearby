@@ -100,12 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				05005C7522D07DD5004E5351 /* AppDelegate.swift */,
-				05005C7722D07DD5004E5351 /* ViewController.swift */,
-				05005C7922D07DD5004E5351 /* Main.storyboard */,
-				05005C7F22D07DD6004E5351 /* Assets.xcassets */,
-				05005C8122D07DD6004E5351 /* LaunchScreen.storyboard */,
-				05005C8422D07DD6004E5351 /* Info.plist */,
-				05005C7C22D07DD5004E5351 /* NearBy.xcdatamodeld */,
+				05005CA722D07F5A004E5351 /* Launch */,
+				05005CA922D07F6A004E5351 /* Models */,
+				05005CA822D07F61004E5351 /* Resources */,
+				05005CAB22D07F86004E5351 /* Scenes */,
+				05005CAA22D07F79004E5351 /* Supporting Files */,
 			);
 			path = NearBy;
 			sourceTree = "<group>";
@@ -126,6 +125,55 @@
 				05005C9A22D07DD6004E5351 /* Info.plist */,
 			);
 			path = NearByUITests;
+			sourceTree = "<group>";
+		};
+		05005CA722D07F5A004E5351 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				05005C8122D07DD6004E5351 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		05005CA822D07F61004E5351 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				05005C7F22D07DD6004E5351 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		05005CA922D07F6A004E5351 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05005C7C22D07DD5004E5351 /* NearBy.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		05005CAA22D07F79004E5351 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05005C8422D07DD6004E5351 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		05005CAB22D07F86004E5351 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				05005CAC22D07FFC004E5351 /* Map */,
+				05005C7922D07DD5004E5351 /* Main.storyboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		05005CAC22D07FFC004E5351 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				05005C7722D07DD5004E5351 /* ViewController.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,7 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NearBy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NearBy/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,7 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NearBy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NearBy/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
