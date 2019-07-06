@@ -17,6 +17,7 @@
 		05005C9922D07DD6004E5351 /* NearByUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005C9822D07DD6004E5351 /* NearByUITests.swift */; };
 		05005CB222D083E9004E5351 /* UIButton+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CB122D083E9004E5351 /* UIButton+Styling.swift */; };
 		05005CB422D0862B004E5351 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CB322D0862B004E5351 /* Permission.swift */; };
+		05005CB822D09445004E5351 /* PermissionGrantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CB722D09445004E5351 /* PermissionGrantViewModel.swift */; };
 		05005CBA22D095FC004E5351 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CB922D095FC004E5351 /* Global.swift */; };
 		05005CBC22D098D0004E5351 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CBB22D098D0004E5351 /* UIColor+CustomColors.swift */; };
 		05005CC322D09EA7004E5351 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CC222D09EA7004E5351 /* Utility.swift */; };
@@ -61,6 +62,7 @@
 		05005C9A22D07DD6004E5351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05005CB122D083E9004E5351 /* UIButton+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styling.swift"; sourceTree = "<group>"; };
 		05005CB322D0862B004E5351 /* Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
+		05005CB722D09445004E5351 /* PermissionGrantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionGrantViewModel.swift; sourceTree = "<group>"; };
 		05005CB922D095FC004E5351 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		05005CBB22D098D0004E5351 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		05005CC222D09EA7004E5351 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		05005CAD22D08320004E5351 /* Permission */ = {
 			isa = PBXGroup;
 			children = (
+				05005CCE22D0C0D5004E5351 /* Grant */,
 				05005CB322D0862B004E5351 /* Permission.swift */,
 				05005CD122D0DB56004E5351 /* PermissionState.swift */,
 			);
@@ -244,6 +247,14 @@
 				05005CCF22D0C0FE004E5351 /* PermissionManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		05005CCE22D0C0D5004E5351 /* Grant */ = {
+			isa = PBXGroup;
+			children = (
+				05005CB722D09445004E5351 /* PermissionGrantViewModel.swift */,
+			);
+			path = Grant;
 			sourceTree = "<group>";
 		};
 		05005CD322D0E598004E5351 /* Reusables */ = {
@@ -389,6 +400,7 @@
 				05005C7822D07DD5004E5351 /* MapViewController.swift in Sources */,
 				05005CB222D083E9004E5351 /* UIButton+Styling.swift in Sources */,
 				05005CCB22D0B108004E5351 /* LocationManager.swift in Sources */,
+				05005CB822D09445004E5351 /* PermissionGrantViewModel.swift in Sources */,
 				05005CB422D0862B004E5351 /* Permission.swift in Sources */,
 				05005CD522D0E5A3004E5351 /* InfoView.swift in Sources */,
 				05005CD222D0DB56004E5351 /* PermissionState.swift in Sources */,
