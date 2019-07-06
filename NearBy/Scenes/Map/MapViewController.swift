@@ -18,7 +18,8 @@ final class MapViewController: LocationAwareViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // TODO
+        mapView.showsUserLocation = true
+        mapView.mapType = MKMapType.hybridFlyover
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -46,8 +47,7 @@ private extension MapViewController {
 
     func startUpdatingUserLocation() {
         locationServicesNotAvailableInfoView?.removeFromSuperview()
-        let permission = Permission.location
-        let state = PermissionManager.shared.stateOfPermission(permission)
+        let state = PermissionManager.shared.stateOfPermission(.location)
 
         switch state {
         case .granted:
@@ -57,26 +57,49 @@ private extension MapViewController {
                 showLocationPermissionNeededInfo()
                 return
             }
-            let viewModel = PermissionGrantViewModel(withPermission: permission)
-            let router = PermissionGrantRouter()
-            let viewController = PermissionGrantViewController()
-            viewController.viewModel = viewModel
-            viewController.router = router
-            present(viewController, animated: true)
+            showPermissionView()
         case .askedButRefused:
             showLocationPermissionNeededInfo()
         case .notAvailable:
-            locationServicesNotAvailableInfoView = InfoView.show(
-                message: permission.permissionIsNotAvailableText,
-                in: self)
+            showLocationServicesNotAvailableInfo(with: Permission.location.permissionIsNotAvailableText)
         }
+    }
+
+    func showPermissionView() {
+        let viewModel = PermissionGrantViewModel(withPermission: .location)
+        let router = PermissionGrantRouter()
+        let viewController = PermissionGrantViewController()
+        viewController.viewModel = viewModel
+        viewController.router = router
+        present(viewController, animated: true)
     }
 
     func showLocationPermissionNeededInfo() {
         guard let text = Permission.location.permissionIsNeededText else {
             return
         }
-        locationServicesNotAvailableInfoView = InfoView.show(message: text,
+        showLocationServicesNotAvailableInfo(with: text)
+    }
+
+    func showLocationServicesNotAvailableInfo(with message: String) {
+        locationServicesNotAvailableInfoView = InfoView.show(message: message,
                                                              in: self)
+        let recognizer = UITapGestureRecognizer(target: self,
+                                                action: #selector(locationServicesNotAvailableInfoViewTapped))
+        locationServicesNotAvailableInfoView?.addGestureRecognizer(recognizer)
+    }
+
+    @objc
+    private func locationServicesNotAvailableInfoViewTapped() {
+        let state = PermissionManager.shared.stateOfPermission(.location)
+        switch state {
+        case .askedButRefused:
+            Utility.openSettingsApplication()
+        case .notAsked:
+            locationServicesNotAvailableInfoView?.removeFromSuperview()
+            showPermissionView()
+        case .notAvailable, .granted:
+            return
+        }
     }
 }

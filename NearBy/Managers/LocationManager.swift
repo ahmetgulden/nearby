@@ -18,11 +18,12 @@ final class LocationManager: NSObject {
 
     private override init() {
         locationManager = CLLocationManager()
+        super.init()
+        locationManager.delegate = self
     }
 
     /// Updates current location of user.
     func askForLocationChanges() {
-        locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
     }
