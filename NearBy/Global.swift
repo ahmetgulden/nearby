@@ -16,4 +16,10 @@ enum Global {
         static let buttonHeight: CGFloat = 44.0
         static let animationDuration: TimeInterval = 0.15
     }
+
+    enum Notification {
+
+        static let userLocationChanged = NSNotification.Name(rawValue: "userLocationChanged")
+        static let locationPermissionStateChanged = NSNotification.Name(rawValue: "locationPermissionStateChanged")
+    }
 }

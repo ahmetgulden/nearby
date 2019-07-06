@@ -56,10 +56,14 @@ final class LocationManager: NSObject {
 extension LocationManager: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        // TODO
+        NotificationCenter.default.post(name: Global.Notification.userLocationChanged,
+                                        object: self,
+                                        userInfo: Dictionary.nrb_formUserInfo(from: locations))
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        // TODO
+        NotificationCenter.default.post(name: Global.Notification.locationPermissionStateChanged,
+                                        object: self,
+                                        userInfo: nil)
     }
 }
