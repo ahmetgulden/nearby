@@ -21,6 +21,7 @@
 		05005CBC22D098D0004E5351 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CBB22D098D0004E5351 /* UIColor+CustomColors.swift */; };
 		05005CC322D09EA7004E5351 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CC222D09EA7004E5351 /* Utility.swift */; };
 		05005CC622D0A942004E5351 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CC522D0A942004E5351 /* ViewModel.swift */; };
+		05005CD222D0DB56004E5351 /* PermissionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CD122D0DB56004E5351 /* PermissionState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		05005CBB22D098D0004E5351 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		05005CC222D09EA7004E5351 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		05005CC522D0A942004E5351 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		05005CD122D0DB56004E5351 /* PermissionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				05005CB322D0862B004E5351 /* Permission.swift */,
+				05005CD122D0DB56004E5351 /* PermissionState.swift */,
 			);
 			path = Permission;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				05005C7822D07DD5004E5351 /* MapViewController.swift in Sources */,
 				05005CB222D083E9004E5351 /* UIButton+Styling.swift in Sources */,
 				05005CB422D0862B004E5351 /* Permission.swift in Sources */,
+				05005CD222D0DB56004E5351 /* PermissionState.swift in Sources */,
 				05005C7622D07DD5004E5351 /* AppDelegate.swift in Sources */,
 				05005CC622D0A942004E5351 /* ViewModel.swift in Sources */,
 				05005C7E22D07DD5004E5351 /* NearBy.xcdatamodeld in Sources */,
