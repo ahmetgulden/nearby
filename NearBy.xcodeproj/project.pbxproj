@@ -15,6 +15,7 @@
 		05005C8322D07DD6004E5351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05005C8122D07DD6004E5351 /* LaunchScreen.storyboard */; };
 		05005C8E22D07DD6004E5351 /* NearByTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005C8D22D07DD6004E5351 /* NearByTests.swift */; };
 		05005C9922D07DD6004E5351 /* NearByUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005C9822D07DD6004E5351 /* NearByUITests.swift */; };
+		05005CB222D083E9004E5351 /* UIButton+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CB122D083E9004E5351 /* UIButton+Styling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		05005C9422D07DD6004E5351 /* NearByUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearByUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05005C9822D07DD6004E5351 /* NearByUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByUITests.swift; sourceTree = "<group>"; };
 		05005C9A22D07DD6004E5351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05005CB122D083E9004E5351 /* UIButton+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styling.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				05005C7522D07DD5004E5351 /* AppDelegate.swift */,
+				05005CB022D083C1004E5351 /* Extensions */,
 				05005CA722D07F5A004E5351 /* Launch */,
 				05005CA922D07F6A004E5351 /* Models */,
 				05005CA822D07F61004E5351 /* Resources */,
@@ -174,6 +177,14 @@
 				05005C7722D07DD5004E5351 /* MapViewController.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		05005CB022D083C1004E5351 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				05005CB122D083E9004E5351 /* UIButton+Styling.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05005C7822D07DD5004E5351 /* MapViewController.swift in Sources */,
+				05005CB222D083E9004E5351 /* UIButton+Styling.swift in Sources */,
 				05005C7622D07DD5004E5351 /* AppDelegate.swift in Sources */,
 				05005C7E22D07DD5004E5351 /* NearBy.xcdatamodeld in Sources */,
 			);
