@@ -18,6 +18,7 @@
 		05005CB222D083E9004E5351 /* UIButton+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CB122D083E9004E5351 /* UIButton+Styling.swift */; };
 		05005CBA22D095FC004E5351 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CB922D095FC004E5351 /* Global.swift */; };
 		05005CBC22D098D0004E5351 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CBB22D098D0004E5351 /* UIColor+CustomColors.swift */; };
+		05005CC322D09EA7004E5351 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CC222D09EA7004E5351 /* Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		05005CB122D083E9004E5351 /* UIButton+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styling.swift"; sourceTree = "<group>"; };
 		05005CB922D095FC004E5351 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		05005CBB22D098D0004E5351 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
+		05005CC222D09EA7004E5351 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				05005CA822D07F61004E5351 /* Resources */,
 				05005CAB22D07F86004E5351 /* Scenes */,
 				05005CAA22D07F79004E5351 /* Supporting Files */,
+				05005CC122D09E96004E5351 /* Utility */,
 			);
 			path = NearBy;
 			sourceTree = "<group>";
@@ -191,6 +194,14 @@
 				05005CBB22D098D0004E5351 /* UIColor+CustomColors.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		05005CC122D09E96004E5351 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				05005CC222D09EA7004E5351 /* Utility.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 				05005CB222D083E9004E5351 /* UIButton+Styling.swift in Sources */,
 				05005C7622D07DD5004E5351 /* AppDelegate.swift in Sources */,
 				05005C7E22D07DD5004E5351 /* NearBy.xcdatamodeld in Sources */,
+				05005CC322D09EA7004E5351 /* Utility.swift in Sources */,
 				05005CBA22D095FC004E5351 /* Global.swift in Sources */,
 				05005CBC22D098D0004E5351 /* UIColor+CustomColors.swift in Sources */,
 			);
