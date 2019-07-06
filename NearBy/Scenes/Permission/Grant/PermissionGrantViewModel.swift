@@ -29,6 +29,8 @@ final class PermissionGrantViewModel: StatefulViewModel<PermissionStateChange> {
     /// - Parameter permission: Permission to ask for grant.
     init(withPermission permission: Permission) {
         self.permission = permission
+
+        PermissionManager.shared.setPermissionAsAsked(permission)
     }
 }
 

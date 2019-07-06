@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /// Permission enum file to hold all permissions.
-enum Permission {
+enum Permission: String {
 
     /// Location grant permission.
     case location

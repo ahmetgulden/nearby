@@ -8,6 +8,11 @@
 
 import Foundation
 
+private enum Constants {
+
+    static let permissionStoragePrefix = "permission_is_asked"
+}
+
 /// Singleton permission manager.
 final class PermissionManager {
 
@@ -15,6 +20,23 @@ final class PermissionManager {
     static let shared = PermissionManager()
 
     private init() {}
+
+    /// Returns wheter or not user permission view has presented to the user
+    /// for this permission.
+    ///
+    /// - Parameter permission: Related permission.
+    /// - Returns: Wheter or not user permission view has presented.
+    func isPermissionAsked(_ permission: Permission) -> Bool {
+        let value = UserDefaults(suiteName: nil)?.bool(forKey: permissionKey(permission))
+        return value ?? false
+    }
+
+    /// Marks this permission as asked in user permission view.
+    ///
+    /// - Parameter permission: Related permission.
+    func setPermissionAsAsked(_ permission: Permission) {
+        UserDefaults(suiteName: nil)?.set(true, forKey: permissionKey(permission))
+    }
 
     /// Returns state of the permission.
     ///
@@ -42,5 +64,14 @@ final class PermissionManager {
                 return
             }
         }
+    }
+}
+
+// MARK: - Helpers
+
+extension PermissionManager {
+
+    private func permissionKey(_ permission: Permission) -> String{
+        return "\(Constants.permissionStoragePrefix)\(permission.rawValue)"
     }
 }
