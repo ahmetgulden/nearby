@@ -30,7 +30,6 @@
 		05005CD522D0E5A3004E5351 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CD422D0E5A3004E5351 /* InfoView.swift */; };
 		05005CD722D0F414004E5351 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CD622D0F414004E5351 /* ViewController.swift */; };
 		05005CD922D0F44E004E5351 /* LocationAwareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CD822D0F44E004E5351 /* LocationAwareViewController.swift */; };
-		05005CDB22D0F572004E5351 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CDA22D0F572004E5351 /* Location.swift */; };
 		05005CDD22D0F5E2004E5351 /* Dictionary+LocationConvertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CDC22D0F5E2004E5351 /* Dictionary+LocationConvertion.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,7 +80,6 @@
 		05005CD422D0E5A3004E5351 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		05005CD622D0F414004E5351 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		05005CD822D0F44E004E5351 /* LocationAwareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAwareViewController.swift; sourceTree = "<group>"; };
-		05005CDA22D0F572004E5351 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		05005CDC22D0F5E2004E5351 /* Dictionary+LocationConvertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+LocationConvertion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				05005C7C22D07DD5004E5351 /* NearBy.xcdatamodeld */,
-				05005CDA22D0F572004E5351 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -416,7 +413,6 @@
 			files = (
 				05005CD922D0F44E004E5351 /* LocationAwareViewController.swift in Sources */,
 				05005CD022D0C0FE004E5351 /* PermissionManager.swift in Sources */,
-				05005CDB22D0F572004E5351 /* Location.swift in Sources */,
 				05005C7822D07DD5004E5351 /* MapViewController.swift in Sources */,
 				05005CB222D083E9004E5351 /* UIButton+Styling.swift in Sources */,
 				05005CCB22D0B108004E5351 /* LocationManager.swift in Sources */,

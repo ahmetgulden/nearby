@@ -6,6 +6,7 @@
 //  Copyright © 2019 Ahmet Gülden. All rights reserved.
 //
 
+import CoreLocation
 import MapKit
 import UIKit
 
@@ -19,7 +20,7 @@ final class MapViewController: LocationAwareViewController {
         super.viewDidLoad()
 
         mapView.showsUserLocation = true
-        mapView.mapType = MKMapType.hybridFlyover
+        mapView.mapType = MKMapType.hybrid
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -28,16 +29,31 @@ final class MapViewController: LocationAwareViewController {
         startUpdatingUserLocation()
     }
 
-    override func locationsAreUpdated(_ locations: [Location]) {
-        super.locationsAreUpdated(locations)
+    override func coordinatesAreUpdated(_ coordinates: [CLLocationCoordinate2D]) {
+        super.coordinatesAreUpdated(coordinates)
 
-        // TODO
+        navigateToUserCoordinate(coordinates.last)
     }
 
     override func locationsPermissionStateChanged() {
         super.locationsPermissionStateChanged()
 
         startUpdatingUserLocation()
+    }
+}
+
+// MARK: - MapView Update
+private extension MapViewController {
+
+    func navigateToUserCoordinate(_ coordinate: CLLocationCoordinate2D?) {
+        guard let coordinate = coordinate else {
+            return
+        }
+
+        let viewRegion = MKCoordinateRegion(center: coordinate,
+                                            latitudinalMeters: 200,
+                                            longitudinalMeters: 200)
+        mapView.setRegion(viewRegion, animated: false)
     }
 }
 

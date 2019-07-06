@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 /// View controller that can be notified when user locations are changed or
 /// location permission state has changed.
@@ -26,11 +27,11 @@ class LocationAwareViewController: ViewController {
                                                object: nil)
     }
 
-    /// Fired when user locations are updated.
+    /// Fired when user coordinates are updated.
     ///
-    /// - Parameter locations: Updated locations. Most recent locations are at
+    /// - Parameter coordinates: Updated coordinates. Most recent coordinates are at
     /// the end of the array.
-    func locationsAreUpdated(_ locations: [Location]) {
+    func coordinatesAreUpdated(_ coordinates: [CLLocationCoordinate2D]) {
         // Subclasses can override this method.
     }
 
@@ -49,7 +50,7 @@ extension LocationAwareViewController {
         guard let userInfo = notification.userInfo else {
             return
         }
-        locationsAreUpdated(userInfo.nrb_locations)
+        coordinatesAreUpdated(userInfo.nrb_coordinates)
     }
 
     @objc

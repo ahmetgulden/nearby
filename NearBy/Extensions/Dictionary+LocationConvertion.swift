@@ -10,23 +10,22 @@ import CoreLocation
 
 private enum Constants {
 
-    static let locationsKey = "Locations"
+    static let coordinatesKey = "Coordinates"
 }
 
 extension Dictionary where Key == AnyHashable, Value == Any {
 
     static func nrb_formUserInfo(from locations: [CLLocation]) -> [AnyHashable: Any]? {
-        let locationArray = locations.map{ (location) -> Location in
-            return Location(latitude: location.coordinate.latitude,
-                            longitude: location.coordinate.longitude)
+        let locationArray = locations.map{ (location) -> CLLocationCoordinate2D in
+            return location.coordinate
         }
-        return [Constants.locationsKey: locationArray]
+        return [Constants.coordinatesKey: locationArray]
     }
 
-    var nrb_locations: [Location] {
-        guard let locations = self[Constants.locationsKey] as? [Location] else {
+    var nrb_coordinates: [CLLocationCoordinate2D] {
+        guard let coordinates = self[Constants.coordinatesKey] as? [CLLocationCoordinate2D] else {
             return []
         }
-        return locations
+        return coordinates
     }
 }
