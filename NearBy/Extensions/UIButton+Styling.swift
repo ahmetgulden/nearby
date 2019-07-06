@@ -39,7 +39,7 @@ extension UIButton {
         fileprivate var backgroundColor: UIColor {
             switch self {
             case .primary:
-                return UIColor.blue
+                return UIColor.nrb_oceanBlueColor
             case .secondary:
                 return UIColor.clear
             }
