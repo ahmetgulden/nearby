@@ -13,7 +13,7 @@ private enum Constants {
     static let iconViewHorizontalProportionalRatio: CGFloat = 0.5
 }
 
-final class PermissionGrantViewController: UIViewController {
+final class PermissionGrantViewController: ViewController {
 
     var viewModel: PermissionGrantViewModel!
     var router: PermissionGrantRouter!

@@ -28,6 +28,7 @@
 		05005CD022D0C0FE004E5351 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CCF22D0C0FE004E5351 /* PermissionManager.swift */; };
 		05005CD222D0DB56004E5351 /* PermissionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CD122D0DB56004E5351 /* PermissionState.swift */; };
 		05005CD522D0E5A3004E5351 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CD422D0E5A3004E5351 /* InfoView.swift */; };
+		05005CD722D0F414004E5351 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CD622D0F414004E5351 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		05005CCF22D0C0FE004E5351 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		05005CD122D0DB56004E5351 /* PermissionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionState.swift; sourceTree = "<group>"; };
 		05005CD422D0E5A3004E5351 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		05005CD622D0F414004E5351 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				05005CC522D0A942004E5351 /* ViewModel.swift */,
+				05005CD622D0F414004E5351 /* ViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				05005CAF22D08339004E5351 /* PermissionGrantViewController.swift in Sources */,
 				05005CC622D0A942004E5351 /* ViewModel.swift in Sources */,
 				05005C7E22D07DD5004E5351 /* NearBy.xcdatamodeld in Sources */,
+				05005CD722D0F414004E5351 /* ViewController.swift in Sources */,
 				05005CC322D09EA7004E5351 /* Utility.swift in Sources */,
 				05005CCD22D0C088004E5351 /* PermissionGrantRouter.swift in Sources */,
 				05005CBA22D095FC004E5351 /* Global.swift in Sources */,
