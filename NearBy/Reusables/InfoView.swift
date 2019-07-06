@@ -33,7 +33,8 @@ extension InfoView {
     /// - Parameters:
     ///   - message: Message to be displayed in info view.
     ///   - viewController: View controller in which info view will be displayed.
-    class func show(message: String, in viewController: UIViewController) {
+    @discardableResult
+    class func show(message: String, in viewController: UIViewController) -> InfoView {
         let infoView = InfoView()
         infoView.translatesAutoresizingMaskIntoConstraints = false
         infoView.backgroundColor = UIColor.nrb_backgroundColor.withAlphaComponent(0.7)
@@ -62,6 +63,8 @@ extension InfoView {
                 ])
             viewController.view.layoutIfNeeded()
         }
+
+        return infoView
     }
 }
 
