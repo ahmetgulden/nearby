@@ -14,5 +14,6 @@ enum Global {
 
         static let margin: CGFloat = 15.0
         static let buttonHeight: CGFloat = 44.0
+        static let animationDuration: TimeInterval = 0.15
     }
 }

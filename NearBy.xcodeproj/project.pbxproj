@@ -22,6 +22,7 @@
 		05005CC322D09EA7004E5351 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CC222D09EA7004E5351 /* Utility.swift */; };
 		05005CC622D0A942004E5351 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CC522D0A942004E5351 /* ViewModel.swift */; };
 		05005CD222D0DB56004E5351 /* PermissionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CD122D0DB56004E5351 /* PermissionState.swift */; };
+		05005CD522D0E5A3004E5351 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CD422D0E5A3004E5351 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		05005CC222D09EA7004E5351 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		05005CC522D0A942004E5351 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		05005CD122D0DB56004E5351 /* PermissionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionState.swift; sourceTree = "<group>"; };
+		05005CD422D0E5A3004E5351 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				05005CA722D07F5A004E5351 /* Launch */,
 				05005CA922D07F6A004E5351 /* Models */,
 				05005CA822D07F61004E5351 /* Resources */,
+				05005CD322D0E598004E5351 /* Reusables */,
 				05005CAB22D07F86004E5351 /* Scenes */,
 				05005CAA22D07F79004E5351 /* Supporting Files */,
 				05005CC122D09E96004E5351 /* Utility */,
@@ -227,6 +230,14 @@
 				05005CC522D0A942004E5351 /* ViewModel.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		05005CD322D0E598004E5351 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				05005CD422D0E5A3004E5351 /* InfoView.swift */,
+			);
+			path = Reusables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +374,7 @@
 				05005C7822D07DD5004E5351 /* MapViewController.swift in Sources */,
 				05005CB222D083E9004E5351 /* UIButton+Styling.swift in Sources */,
 				05005CB422D0862B004E5351 /* Permission.swift in Sources */,
+				05005CD522D0E5A3004E5351 /* InfoView.swift in Sources */,
 				05005CD222D0DB56004E5351 /* PermissionState.swift in Sources */,
 				05005C7622D07DD5004E5351 /* AppDelegate.swift in Sources */,
 				05005CC622D0A942004E5351 /* ViewModel.swift in Sources */,
