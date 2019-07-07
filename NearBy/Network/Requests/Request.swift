@@ -22,6 +22,16 @@ enum RequestMethod: String {
 
 enum Host: String {
     case hereApi = "https://places.demo.api.here.com/places/v1/"
+
+    var additionalParameters: [String: String] {
+        switch self {
+        case .hereApi:
+            return [
+                "app_code": "AJKnXv84fjrb0KIHawS0Tg",
+                "app_id": "DemoAppId01082013GAL",
+            ]
+        }
+    }
 }
 
 protocol Request {
@@ -30,22 +40,4 @@ protocol Request {
     var endpoint: String { get }
     var method: RequestMethod { get }
     var parameters: [String: String] { get }
-}
-
-extension Request {
-
-    func parametersForPost() -> Data {
-        return Data() // TODO
-    }
-
-    func parametersForGet() -> String {
-        return parameters.reduce(into: "", { (result, tuple) in
-            if !result.isEmpty {
-                result.append("&")
-            }
-            result.append(tuple.key)
-            result.append("=")
-            result.append(tuple.value)
-        })
-    }
 }

@@ -39,6 +39,7 @@
 		0518962622D2500D00530200 /* ExploreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962522D2500D00530200 /* ExploreRequest.swift */; };
 		0518962822D256AF00530200 /* ExploreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962722D256AF00530200 /* ExploreResponse.swift */; };
 		0518962D22D25F5600530200 /* HereAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962C22D25F5600530200 /* HereAPI.swift */; };
+		0518962F22D261F500530200 /* Dictionary+NetworkParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962E22D261F500530200 /* Dictionary+NetworkParameters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		0518962522D2500D00530200 /* ExploreRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRequest.swift; sourceTree = "<group>"; };
 		0518962722D256AF00530200 /* ExploreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreResponse.swift; sourceTree = "<group>"; };
 		0518962C22D25F5600530200 /* HereAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereAPI.swift; sourceTree = "<group>"; };
+		0518962E22D261F500530200 /* Dictionary+NetworkParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+NetworkParameters.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 				05005CB122D083E9004E5351 /* UIButton+Styling.swift */,
 				05005CBB22D098D0004E5351 /* UIColor+CustomColors.swift */,
 				05005CDC22D0F5E2004E5351 /* Dictionary+LocationConvertion.swift */,
+				0518962E22D261F500530200 /* Dictionary+NetworkParameters.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				05005CD722D0F414004E5351 /* ViewController.swift in Sources */,
 				05005CC322D09EA7004E5351 /* Utility.swift in Sources */,
 				0518961C22D2455900530200 /* Response.swift in Sources */,
+				0518962F22D261F500530200 /* Dictionary+NetworkParameters.swift in Sources */,
 				05005CCD22D0C088004E5351 /* PermissionGrantRouter.swift in Sources */,
 				05005CBA22D095FC004E5351 /* Global.swift in Sources */,
 				05005CBC22D098D0004E5351 /* UIColor+CustomColors.swift in Sources */,

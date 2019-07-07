@@ -19,8 +19,10 @@ final class NetworkManager {
 
     func send<T: Response>(_ request: Request, completion:((NetworkResult<T>) -> ())?) {
         var components = URLComponents(string: request.host.rawValue.appending(request.endpoint))
+        var parameters = request.host.additionalParameters
+        parameters.merge(request.parameters) { (_, new) in new }
         if request.method != .post {
-            components?.query = request.parametersForGet()
+            components?.query = parameters.nrb_parametersForGet
         }
         guard let url = components?.url else {
             completion?(NetworkResult.failure(error: .brokenURL))
@@ -29,7 +31,7 @@ final class NetworkManager {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
         if request.method == .post {
-            urlRequest.httpBody = request.parametersForPost()
+            urlRequest.httpBody = parameters.nrb_parametersForPost
         }
         urlRequest.setValue(Constants.defaultContentType,
                             forHTTPHeaderField: Constants.contentTypeKey)

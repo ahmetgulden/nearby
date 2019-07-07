@@ -17,8 +17,6 @@ struct ExploreRequest: Request {
 
     init(category: HereAPI.Category, latitude: Double, longitude: Double) {
         self.parameters = [
-            "app_code": "AJKnXv84fjrb0KIHawS0Tg",
-            "app_id": "DemoAppId01082013GAL",
             "cat": category.rawValue,
             "pretty": "true",
             "in": "\(latitude),\(longitude);r=500"
