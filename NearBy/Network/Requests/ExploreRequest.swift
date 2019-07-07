@@ -15,11 +15,11 @@ struct ExploreRequest: Request {
     let method: RequestMethod = .get
     let parameters: [String : String]
 
-    init(category: String, latitude: Double, longitude: Double) {
+    init(category: HereAPI.Category, latitude: Double, longitude: Double) {
         self.parameters = [
             "app_code": "AJKnXv84fjrb0KIHawS0Tg",
             "app_id": "DemoAppId01082013GAL",
-            "cat": category,
+            "cat": category.rawValue,
             "pretty": "true",
             "in": "\(latitude),\(longitude);r=500"
         ]

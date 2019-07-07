@@ -38,6 +38,7 @@
 		0518962222D24AC300530200 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962122D24AC300530200 /* NetworkError.swift */; };
 		0518962622D2500D00530200 /* ExploreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962522D2500D00530200 /* ExploreRequest.swift */; };
 		0518962822D256AF00530200 /* ExploreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962722D256AF00530200 /* ExploreResponse.swift */; };
+		0518962D22D25F5600530200 /* HereAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962C22D25F5600530200 /* HereAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		0518962122D24AC300530200 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		0518962522D2500D00530200 /* ExploreRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRequest.swift; sourceTree = "<group>"; };
 		0518962722D256AF00530200 /* ExploreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreResponse.swift; sourceTree = "<group>"; };
+		0518962C22D25F5600530200 /* HereAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 				0518962122D24AC300530200 /* NetworkError.swift */,
 				0518961622D244F900530200 /* NetworkManager.swift */,
 				0518961F22D24A6700530200 /* NetworkResult.swift */,
+				0518962C22D25F5600530200 /* HereAPI.swift */,
 				0518961D22D2456F00530200 /* Requests */,
 				0518961E22D2457600530200 /* Responses */,
 			);
@@ -466,6 +469,7 @@
 				05005CB822D09445004E5351 /* PermissionGrantViewModel.swift in Sources */,
 				05005CB422D0862B004E5351 /* Permission.swift in Sources */,
 				05005CD522D0E5A3004E5351 /* InfoView.swift in Sources */,
+				0518962D22D25F5600530200 /* HereAPI.swift in Sources */,
 				0518962222D24AC300530200 /* NetworkError.swift in Sources */,
 				05005CD222D0DB56004E5351 /* PermissionState.swift in Sources */,
 				05005C7622D07DD5004E5351 /* AppDelegate.swift in Sources */,
