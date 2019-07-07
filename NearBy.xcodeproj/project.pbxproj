@@ -31,6 +31,11 @@
 		05005CD722D0F414004E5351 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CD622D0F414004E5351 /* ViewController.swift */; };
 		05005CD922D0F44E004E5351 /* LocationAwareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CD822D0F44E004E5351 /* LocationAwareViewController.swift */; };
 		05005CDD22D0F5E2004E5351 /* Dictionary+LocationConvertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CDC22D0F5E2004E5351 /* Dictionary+LocationConvertion.swift */; };
+		0518961722D244F900530200 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518961622D244F900530200 /* NetworkManager.swift */; };
+		0518961A22D2454B00530200 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518961922D2454B00530200 /* Request.swift */; };
+		0518961C22D2455900530200 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518961B22D2455900530200 /* Response.swift */; };
+		0518962022D24A6700530200 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518961F22D24A6700530200 /* NetworkResult.swift */; };
+		0518962222D24AC300530200 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962122D24AC300530200 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +86,11 @@
 		05005CD622D0F414004E5351 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		05005CD822D0F44E004E5351 /* LocationAwareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAwareViewController.swift; sourceTree = "<group>"; };
 		05005CDC22D0F5E2004E5351 /* Dictionary+LocationConvertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+LocationConvertion.swift"; sourceTree = "<group>"; };
+		0518961622D244F900530200 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0518961922D2454B00530200 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		0518961B22D2455900530200 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		0518961F22D24A6700530200 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		0518962122D24AC300530200 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +148,7 @@
 				05005CA722D07F5A004E5351 /* Launch */,
 				05005CC922D0B0FC004E5351 /* Managers */,
 				05005CA922D07F6A004E5351 /* Models */,
+				0518961822D2453B00530200 /* Network */,
 				05005CA822D07F61004E5351 /* Resources */,
 				05005CD322D0E598004E5351 /* Reusables */,
 				05005CAB22D07F86004E5351 /* Scenes */,
@@ -280,6 +291,34 @@
 			path = Reusables;
 			sourceTree = "<group>";
 		};
+		0518961822D2453B00530200 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0518962122D24AC300530200 /* NetworkError.swift */,
+				0518961622D244F900530200 /* NetworkManager.swift */,
+				0518961F22D24A6700530200 /* NetworkResult.swift */,
+				0518961D22D2456F00530200 /* Requests */,
+				0518961E22D2457600530200 /* Responses */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0518961D22D2456F00530200 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				0518961922D2454B00530200 /* Request.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		0518961E22D2457600530200 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				0518961B22D2455900530200 /* Response.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -415,18 +454,23 @@
 				05005CD022D0C0FE004E5351 /* PermissionManager.swift in Sources */,
 				05005C7822D07DD5004E5351 /* MapViewController.swift in Sources */,
 				05005CB222D083E9004E5351 /* UIButton+Styling.swift in Sources */,
+				0518961A22D2454B00530200 /* Request.swift in Sources */,
 				05005CCB22D0B108004E5351 /* LocationManager.swift in Sources */,
 				05005CB822D09445004E5351 /* PermissionGrantViewModel.swift in Sources */,
 				05005CB422D0862B004E5351 /* Permission.swift in Sources */,
 				05005CD522D0E5A3004E5351 /* InfoView.swift in Sources */,
+				0518962222D24AC300530200 /* NetworkError.swift in Sources */,
 				05005CD222D0DB56004E5351 /* PermissionState.swift in Sources */,
 				05005C7622D07DD5004E5351 /* AppDelegate.swift in Sources */,
 				05005CAF22D08339004E5351 /* PermissionGrantViewController.swift in Sources */,
 				05005CDD22D0F5E2004E5351 /* Dictionary+LocationConvertion.swift in Sources */,
+				0518962022D24A6700530200 /* NetworkResult.swift in Sources */,
+				0518961722D244F900530200 /* NetworkManager.swift in Sources */,
 				05005CC622D0A942004E5351 /* ViewModel.swift in Sources */,
 				05005C7E22D07DD5004E5351 /* NearBy.xcdatamodeld in Sources */,
 				05005CD722D0F414004E5351 /* ViewController.swift in Sources */,
 				05005CC322D09EA7004E5351 /* Utility.swift in Sources */,
+				0518961C22D2455900530200 /* Response.swift in Sources */,
 				05005CCD22D0C088004E5351 /* PermissionGrantRouter.swift in Sources */,
 				05005CBA22D095FC004E5351 /* Global.swift in Sources */,
 				05005CBC22D098D0004E5351 /* UIColor+CustomColors.swift in Sources */,
