@@ -66,7 +66,7 @@ private extension MapViewController {
             }
 
             switch stateChange {
-            case .exploreItemsReceived:
+            case .itemsReceived:
                 strongSelf.removeAllPins()
                 // TODO
             case .userLocationDetected:

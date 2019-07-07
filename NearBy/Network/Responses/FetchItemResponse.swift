@@ -1,5 +1,5 @@
 //
-//  ExploreResponse.swift
+//  FetchItemResponse.swift
 //  NearBy
 //
 //  Created by Ahmet Gülden on 7.07.2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ExploreResponse: Response {
+struct FetchItemResponse: Response {
 
     struct Results: Response {
 

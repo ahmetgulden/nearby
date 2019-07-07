@@ -10,13 +10,13 @@ import Foundation
 
 enum MapStateChange: StateChange {
 
-    case exploreItemsReceived
+    case itemsReceived
     case userLocationDetected
 }
 
 final class MapViewModel: StatefulViewModel<MapStateChange> {
 
-    private(set) var exploredItems: ExploreResponse?
+    private(set) var items: [FetchItemResponse.Results.Item]?
     private(set) var userLatitude: Double?
     private(set) var userLongitude: Double?
 }
@@ -38,12 +38,32 @@ extension MapViewModel {
         let request = ExploreRequest(category: category,
                                      latitude: latitude,
                                      longitude: longitude)
-        NetworkManager().send(request) { [weak self] (result: NetworkResult<ExploreResponse>) in
+        fetchItems(with: request)
+    }
+
+    func search(text: String) {
+        guard let latitude = userLatitude, let longitude = userLongitude else {
+            return
+        }
+        let request = SearchRequest(text: text,
+                                    latitude: latitude,
+                                    longitude: longitude)
+        fetchItems(with: request)
+    }
+
+}
+
+// MARK: - Network call
+
+private extension MapViewModel {
+
+    func fetchItems(with request: Request) {
+        NetworkManager().send(request) { [weak self] (result: NetworkResult<FetchItemResponse>) in
             switch result {
             case .success(let response):
-                self?.exploredItems = response
+                self?.items = response.results.items
                 DispatchQueue.main.async {
-                    self?.emit(.exploreItemsReceived)
+                    self?.emit(.itemsReceived)
                 }
             case .failure(let error):
                 // TODO

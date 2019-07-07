@@ -107,6 +107,7 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
 
+        state = .collapsed
         mapViewModel?.explore(category: HereAPI.Category.allCases[indexPath.row])
     }
 }
@@ -119,8 +120,10 @@ extension SearchViewController: UITextFieldDelegate {
         state = .expanded
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        // TODO search
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        state = .collapsed
+        mapViewModel?.search(text: textField.text ?? "")
+        return true
     }
 }
 
