@@ -9,7 +9,6 @@
 import UIKit
 
 private enum Constants {
-    static let cellHorizontalInset: CGFloat = 8.0
     static let cellEstimatedSize: CGSize = CGSize(width: 100.0, height: 40.0)
 }
 
@@ -176,22 +175,5 @@ private extension SearchViewController {
             self.collapsedLayoutConstraint.priority = isCollapsed ? UILayoutPriority.defaultHigh : UILayoutPriority.defaultLow
             self.view.layoutIfNeeded()
         }
-    }
-}
-
-final class SearchCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet fileprivate weak var titleLabel: UILabel!
-
-    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        setNeedsLayout()
-        layoutIfNeeded()
-
-        var frame = layoutAttributes.frame
-        let maxSize = CGSize(width: .greatestFiniteMagnitude, height: frame.height)
-        let size = titleLabel.sizeThatFits(maxSize)
-        frame.size.width = ceil(size.width) + Constants.cellHorizontalInset
-        layoutAttributes.frame = frame
-        return layoutAttributes
     }
 }
