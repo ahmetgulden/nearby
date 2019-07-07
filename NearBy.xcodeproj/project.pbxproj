@@ -41,6 +41,8 @@
 		0518962A22D257A100530200 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962922D257A100530200 /* MapViewModel.swift */; };
 		0518962D22D25F5600530200 /* HereAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962C22D25F5600530200 /* HereAPI.swift */; };
 		0518962F22D261F500530200 /* Dictionary+NetworkParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962E22D261F500530200 /* Dictionary+NetworkParameters.swift */; };
+		0518963122D278F100530200 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963022D278F100530200 /* SearchViewController.swift */; };
+		0518963422D279F300530200 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963322D279F300530200 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		0518962922D257A100530200 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		0518962C22D25F5600530200 /* HereAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereAPI.swift; sourceTree = "<group>"; };
 		0518962E22D261F500530200 /* Dictionary+NetworkParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+NetworkParameters.swift"; sourceTree = "<group>"; };
+		0518963022D278F100530200 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0518963322D279F300530200 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,8 +225,9 @@
 		05005CAB22D07F86004E5351 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				05005CAD22D08320004E5351 /* Permission */,
 				05005CAC22D07FFC004E5351 /* Map */,
+				05005CAD22D08320004E5351 /* Permission */,
+				0518963222D278F600530200 /* Search */,
 				05005C7922D07DD5004E5351 /* Main.storyboard */,
 			);
 			path = Scenes;
@@ -332,6 +337,15 @@
 				0518962722D256AF00530200 /* ExploreResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		0518963222D278F600530200 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0518963022D278F100530200 /* SearchViewController.swift */,
+				0518963322D279F300530200 /* SearchViewModel.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0518963122D278F100530200 /* SearchViewController.swift in Sources */,
 				05005CD922D0F44E004E5351 /* LocationAwareViewController.swift in Sources */,
 				05005CD022D0C0FE004E5351 /* PermissionManager.swift in Sources */,
 				05005C7822D07DD5004E5351 /* MapViewController.swift in Sources */,
@@ -488,6 +503,7 @@
 				05005C7E22D07DD5004E5351 /* NearBy.xcdatamodeld in Sources */,
 				05005CD722D0F414004E5351 /* ViewController.swift in Sources */,
 				05005CC322D09EA7004E5351 /* Utility.swift in Sources */,
+				0518963422D279F300530200 /* SearchViewModel.swift in Sources */,
 				0518961C22D2455900530200 /* Response.swift in Sources */,
 				0518962F22D261F500530200 /* Dictionary+NetworkParameters.swift in Sources */,
 				05005CCD22D0C088004E5351 /* PermissionGrantRouter.swift in Sources */,
