@@ -44,6 +44,7 @@
 		0518963122D278F100530200 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963022D278F100530200 /* SearchViewController.swift */; };
 		0518963422D279F300530200 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963322D279F300530200 /* SearchViewModel.swift */; };
 		0518963622D29BA800530200 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963522D29BA800530200 /* SearchCollectionViewCell.swift */; };
+		0518963822D29BEE00530200 /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963722D29BEE00530200 /* PassthroughView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		0518963022D278F100530200 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0518963322D279F300530200 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		0518963522D29BA800530200 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		0518963722D29BEE00530200 /* PassthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 			children = (
 				05005CD422D0E5A3004E5351 /* InfoView.swift */,
 				05005CD822D0F44E004E5351 /* LocationAwareViewController.swift */,
+				0518963722D29BEE00530200 /* PassthroughView.swift */,
 				0518963522D29BA800530200 /* SearchCollectionViewCell.swift */,
 			);
 			path = Reusables;
@@ -486,6 +489,7 @@
 				05005CD922D0F44E004E5351 /* LocationAwareViewController.swift in Sources */,
 				05005CD022D0C0FE004E5351 /* PermissionManager.swift in Sources */,
 				05005C7822D07DD5004E5351 /* MapViewController.swift in Sources */,
+				0518963822D29BEE00530200 /* PassthroughView.swift in Sources */,
 				0518962622D2500D00530200 /* ExploreRequest.swift in Sources */,
 				05005CB222D083E9004E5351 /* UIButton+Styling.swift in Sources */,
 				0518961A22D2454B00530200 /* Request.swift in Sources */,
