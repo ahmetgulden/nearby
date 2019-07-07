@@ -14,6 +14,7 @@ final class MapViewController: LocationAwareViewController {
 
     @IBOutlet private weak var mapView: MKMapView!
 
+    private let viewModel = MapViewModel()
     private var locationServicesNotAvailableInfoView: InfoView?
 
     override func viewDidLoad() {
@@ -42,6 +43,25 @@ final class MapViewController: LocationAwareViewController {
     }
 }
 
+// MARK: - State Handling
+
+private extension MapViewController {
+
+    func handleStateChange() {
+        viewModel.setStateChangeHandler { [weak self] stateChange in
+            guard let strongSelf = self else {
+                return
+            }
+
+            switch stateChange {
+            case .exploreItemsReceived:
+                strongSelf.removeAllPins()
+                // TODO
+            }
+        }
+    }
+}
+
 // MARK: - MapView Update
 private extension MapViewController {
 
@@ -54,6 +74,15 @@ private extension MapViewController {
                                             latitudinalMeters: 200,
                                             longitudinalMeters: 200)
         mapView.setRegion(viewRegion, animated: false)
+
+        // TODO set correct category
+        viewModel.explore(category: .atmBankExchange,
+                          latitude: coordinate.latitude,
+                          longitude: coordinate.longitude)
+    }
+
+    func removeAllPins() {
+        mapView.removeAnnotations(mapView.annotations)
     }
 }
 
