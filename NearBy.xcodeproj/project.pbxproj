@@ -36,6 +36,8 @@
 		0518961C22D2455900530200 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518961B22D2455900530200 /* Response.swift */; };
 		0518962022D24A6700530200 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518961F22D24A6700530200 /* NetworkResult.swift */; };
 		0518962222D24AC300530200 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962122D24AC300530200 /* NetworkError.swift */; };
+		0518962622D2500D00530200 /* ExploreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962522D2500D00530200 /* ExploreRequest.swift */; };
+		0518962822D256AF00530200 /* ExploreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962722D256AF00530200 /* ExploreResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		0518961B22D2455900530200 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		0518961F22D24A6700530200 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		0518962122D24AC300530200 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		0518962522D2500D00530200 /* ExploreRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreRequest.swift; sourceTree = "<group>"; };
+		0518962722D256AF00530200 /* ExploreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				0518961922D2454B00530200 /* Request.swift */,
+				0518962522D2500D00530200 /* ExploreRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				0518961B22D2455900530200 /* Response.swift */,
+				0518962722D256AF00530200 /* ExploreResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 				05005CD922D0F44E004E5351 /* LocationAwareViewController.swift in Sources */,
 				05005CD022D0C0FE004E5351 /* PermissionManager.swift in Sources */,
 				05005C7822D07DD5004E5351 /* MapViewController.swift in Sources */,
+				0518962622D2500D00530200 /* ExploreRequest.swift in Sources */,
 				05005CB222D083E9004E5351 /* UIButton+Styling.swift in Sources */,
 				0518961A22D2454B00530200 /* Request.swift in Sources */,
 				05005CCB22D0B108004E5351 /* LocationManager.swift in Sources */,
@@ -465,6 +472,7 @@
 				05005CAF22D08339004E5351 /* PermissionGrantViewController.swift in Sources */,
 				05005CDD22D0F5E2004E5351 /* Dictionary+LocationConvertion.swift in Sources */,
 				0518962022D24A6700530200 /* NetworkResult.swift in Sources */,
+				0518962822D256AF00530200 /* ExploreResponse.swift in Sources */,
 				0518961722D244F900530200 /* NetworkManager.swift in Sources */,
 				05005CC622D0A942004E5351 /* ViewModel.swift in Sources */,
 				05005C7E22D07DD5004E5351 /* NearBy.xcdatamodeld in Sources */,
