@@ -68,7 +68,8 @@ private extension MapViewController {
             switch stateChange {
             case .itemsReceived:
                 strongSelf.removeAllPins()
-                // TODO
+                strongSelf.addItemPins()
+                strongSelf.zoomCamera()
             case .userLocationDetected:
                 strongSelf.searchViewController?.view.isHidden = false
             }
@@ -94,6 +95,20 @@ private extension MapViewController {
 
     func removeAllPins() {
         mapView.removeAnnotations(mapView.annotations)
+    }
+
+    func addItemPins() {
+        (viewModel.items ?? []).forEach { item in
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: item.position.first!,
+                                                           longitude: item.position.last!)
+            annotation.title = item.title
+            mapView.addAnnotation(annotation)
+        }
+    }
+
+    func zoomCamera() {
+        mapView.nrb_fitAllAnnotationsAndUser()
     }
 }
 
