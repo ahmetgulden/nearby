@@ -42,7 +42,7 @@
 		0518962D22D25F5600530200 /* HereAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962C22D25F5600530200 /* HereAPI.swift */; };
 		0518962F22D261F500530200 /* Dictionary+NetworkParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518962E22D261F500530200 /* Dictionary+NetworkParameters.swift */; };
 		0518963122D278F100530200 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963022D278F100530200 /* SearchViewController.swift */; };
-		0518963422D279F300530200 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963322D279F300530200 /* SearchViewModel.swift */; };
+		0518963422D279F300530200 /* SearchViewPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963322D279F300530200 /* SearchViewPresentation.swift */; };
 		0518963622D29BA800530200 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963522D29BA800530200 /* SearchCollectionViewCell.swift */; };
 		0518963822D29BEE00530200 /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963722D29BEE00530200 /* PassthroughView.swift */; };
 		0518963A22D2A14000530200 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963922D2A14000530200 /* SearchRequest.swift */; };
@@ -107,7 +107,7 @@
 		0518962C22D25F5600530200 /* HereAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereAPI.swift; sourceTree = "<group>"; };
 		0518962E22D261F500530200 /* Dictionary+NetworkParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+NetworkParameters.swift"; sourceTree = "<group>"; };
 		0518963022D278F100530200 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		0518963322D279F300530200 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		0518963322D279F300530200 /* SearchViewPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewPresentation.swift; sourceTree = "<group>"; };
 		0518963522D29BA800530200 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		0518963722D29BEE00530200 /* PassthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughView.swift; sourceTree = "<group>"; };
 		0518963922D2A14000530200 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
@@ -352,7 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				0518963022D278F100530200 /* SearchViewController.swift */,
-				0518963322D279F300530200 /* SearchViewModel.swift */,
+				0518963322D279F300530200 /* SearchViewPresentation.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -515,7 +515,7 @@
 				05005C7E22D07DD5004E5351 /* NearBy.xcdatamodeld in Sources */,
 				05005CD722D0F414004E5351 /* ViewController.swift in Sources */,
 				05005CC322D09EA7004E5351 /* Utility.swift in Sources */,
-				0518963422D279F300530200 /* SearchViewModel.swift in Sources */,
+				0518963422D279F300530200 /* SearchViewPresentation.swift in Sources */,
 				0518961C22D2455900530200 /* Response.swift in Sources */,
 				0518962F22D261F500530200 /* Dictionary+NetworkParameters.swift in Sources */,
 				05005CCD22D0C088004E5351 /* PermissionGrantRouter.swift in Sources */,

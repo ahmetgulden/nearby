@@ -1,5 +1,5 @@
 //
-//  SearchViewModel.swift
+//  SearchViewPresentation.swift
 //  NearBy
 //
 //  Created by Ahmet Gülden on 7.07.2019.
