@@ -13,15 +13,27 @@ import UIKit
 final class MapViewController: LocationAwareViewController {
 
     @IBOutlet private weak var mapView: MKMapView!
+    @IBOutlet private weak var searchContainerView: PassthroughView!
 
+    private weak var searchViewController: SearchViewController?
     private let viewModel = MapViewModel()
     private var locationServicesNotAvailableInfoView: InfoView?
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+
+        searchViewController = segue.destination as? SearchViewController
+        searchViewController?.mapViewModel = viewModel
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         mapView.showsUserLocation = true
         mapView.mapType = MKMapType.hybrid
+        searchContainerView.addHittableSubview(searchViewController!.contentView)
+        searchViewController?.view.isHidden = true
+        handleStateChange()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -57,6 +69,8 @@ private extension MapViewController {
             case .exploreItemsReceived:
                 strongSelf.removeAllPins()
                 // TODO
+            case .userLocationDetected:
+                strongSelf.searchViewController?.view.isHidden = false
             }
         }
     }
@@ -71,14 +85,11 @@ private extension MapViewController {
         }
 
         let viewRegion = MKCoordinateRegion(center: coordinate,
-                                            latitudinalMeters: 200,
-                                            longitudinalMeters: 200)
+                                            latitudinalMeters: 2000,
+                                            longitudinalMeters: 2000)
         mapView.setRegion(viewRegion, animated: false)
-
-        // TODO set correct category
-        viewModel.explore(category: .atmBankExchange,
-                          latitude: coordinate.latitude,
-                          longitude: coordinate.longitude)
+        viewModel.setUserLocation(latitude: coordinate.latitude,
+                                  longitude: coordinate.longitude)
     }
 
     func removeAllPins() {

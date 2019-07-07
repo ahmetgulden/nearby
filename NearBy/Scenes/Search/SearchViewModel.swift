@@ -8,13 +8,7 @@
 
 import Foundation
 
-enum SearchStateChange: StateChange {
-
-    case requestedSearch(text: String)
-    case requestedExplory(category: HereAPI.Category)
-}
-
-final class SearchViewModel: StatefulViewModel<SearchStateChange> {
+struct SearchViewPresentation {
 
     let searchTitleText = "You can search nearby locations by entering search text below"
     let exploreTitleText = "Or you can simply explore by selecting a category"

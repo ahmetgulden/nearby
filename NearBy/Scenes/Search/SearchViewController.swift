@@ -23,7 +23,7 @@ final class SearchViewController: ViewController {
     @IBOutlet private weak var openButton: UIButton!
     @IBOutlet private weak var openButtonIconView: UIView!
 
-    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private(set) weak var contentView: UIView!
 
     @IBOutlet private weak var searchView: UIView!
     @IBOutlet private weak var searchTitleLabel: UILabel!
@@ -36,7 +36,8 @@ final class SearchViewController: ViewController {
     @IBOutlet private weak var expandedLayoutConstraint: NSLayoutConstraint!
     @IBOutlet private weak var collapsedLayoutConstraint: NSLayoutConstraint!
 
-    let viewModel = SearchViewModel()
+    private let presentation = SearchViewPresentation()
+    weak var mapViewModel: MapViewModel?
 
     private var state: SearchViewState = .collapsed {
         didSet {
@@ -55,44 +56,23 @@ final class SearchViewController: ViewController {
     }
 }
 
-// MARK: - State Handling
-
-private extension SearchViewController {
-
-    func handleStateChange() {
-        viewModel.setStateChangeHandler { [weak self] stateChange in
-            guard let strongSelf = self else {
-                return
-            }
-
-            switch stateChange {
-            case .requestedSearch(let text):
-                // TODO
-                break
-            case .requestedExplory(let category):
-                // TODO
-                break
-            }
-        }
-    }
-}
-
 // MARK: - Configuration
 
 private extension SearchViewController {
 
     func configureUIElements() {
         contentView.layer.cornerRadius = 15.0
-        closeButton.setTitle(viewModel.closeButtonText, for: .normal)
-        searchTitleLabel.text = viewModel.searchTitleText
+        closeButton.setTitle(presentation.closeButtonText, for: .normal)
+        searchTitleLabel.text = presentation.searchTitleText
 
         // TODO add text field close toolbar button.
 
-        searchTextField.placeholder = viewModel.searchTextPlaceholder
+        searchTextField.placeholder = presentation.searchTextPlaceholder
         searchTextField.returnKeyType = .search
         searchTextField.delegate = self
-        exploreTitleLabel.text = viewModel.exploreTitleText
+        exploreTitleLabel.text = presentation.exploreTitleText
         exploreCollectionView.dataSource = self
+        exploreCollectionView.delegate = self
         let layout = exploreCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.itemSize = UICollectionViewFlowLayout.automaticSize
         layout?.estimatedItemSize = Constants.cellEstimatedSize
@@ -127,6 +107,7 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
 
+        mapViewModel?.explore(category: HereAPI.Category.allCases[indexPath.row])
     }
 }
 

@@ -21,7 +21,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EPw-si-bPL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgc-gs-jK7">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgc-gs-jK7" customClass="PassthroughView" customModule="NearBy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="KIR-oA-BcN" kind="embed" id="SRH-SO-5hO"/>
@@ -43,6 +43,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="EPw-si-bPL" id="uAa-rK-ryK"/>
+                        <outlet property="searchContainerView" destination="cgc-gs-jK7" id="0BH-fn-6Km"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -141,7 +142,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="or3-8E-GXy">
-                                        <rect key="frame" x="15" y="140" width="315" height="527"/>
+                                        <rect key="frame" x="15" y="120" width="315" height="547"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPW-n3-KDn">
                                                 <rect key="frame" x="0.0" y="15" width="315" height="0.0"/>
@@ -150,7 +151,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IlG-Pw-uGT">
-                                                <rect key="frame" x="0.0" y="30" width="315" height="477"/>
+                                                <rect key="frame" x="0.0" y="30" width="315" height="497"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="sFc-8B-ofS">
                                                     <size key="itemSize" width="100" height="50"/>
@@ -213,7 +214,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="or3-8E-GXy" firstAttribute="top" secondItem="RWa-jx-i50" secondAttribute="bottom" constant="20" id="4Qw-Hz-hbk"/>
+                                    <constraint firstItem="or3-8E-GXy" firstAttribute="top" secondItem="RWa-jx-i50" secondAttribute="bottom" id="4Qw-Hz-hbk"/>
                                     <constraint firstItem="RWa-jx-i50" firstAttribute="leading" secondItem="Csk-h5-SdU" secondAttribute="leading" constant="15" id="59b-T4-GRL"/>
                                     <constraint firstItem="or3-8E-GXy" firstAttribute="trailing" secondItem="RWa-jx-i50" secondAttribute="trailing" id="OSp-Hv-EAr"/>
                                     <constraint firstItem="or3-8E-GXy" firstAttribute="leading" secondItem="RWa-jx-i50" secondAttribute="leading" id="YZ7-43-4VO"/>
