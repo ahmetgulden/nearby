@@ -12,18 +12,20 @@ private enum Constants {
     static let cellEstimatedSize: CGSize = CGSize(width: 100.0, height: 40.0)
 }
 
-private enum SearchViewState {
-    case expanded
+private enum SearchViewState: Int {
+    case minified
     case collapsed
+    case expanded
 }
 
 final class SearchViewController: ViewController {
 
+    @IBOutlet private(set) weak var contentView: UIView!
+
+    @IBOutlet private weak var controlView: UIView!
     @IBOutlet private weak var closeButton: UIButton!
     @IBOutlet private weak var openButton: UIButton!
     @IBOutlet private weak var openButtonIconView: UIView!
-
-    @IBOutlet private(set) weak var contentView: UIView!
 
     @IBOutlet private weak var searchView: UIView!
     @IBOutlet private weak var searchTitleLabel: UILabel!
@@ -35,6 +37,7 @@ final class SearchViewController: ViewController {
 
     @IBOutlet private weak var expandedLayoutConstraint: NSLayoutConstraint!
     @IBOutlet private weak var collapsedLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var minifiedLayoutConstraint: NSLayoutConstraint!
 
     private let presentation = SearchViewPresentation()
     weak var mapViewModel: MapViewModel?
@@ -52,6 +55,7 @@ final class SearchViewController: ViewController {
         super.viewDidLoad()
 
         configureUIElements()
+        addSwipeGestureRecognizers()
         updateViewState(animated: false)
     }
 }
@@ -76,6 +80,18 @@ private extension SearchViewController {
         let layout = exploreCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.itemSize = UICollectionViewFlowLayout.automaticSize
         layout?.estimatedItemSize = Constants.cellEstimatedSize
+    }
+
+    func addSwipeGestureRecognizers() {
+        let swipeUpGestureRecognizer = UISwipeGestureRecognizer(target: self,
+                                                                action: #selector(swipedUp))
+        swipeUpGestureRecognizer.direction = .up
+        contentView.addGestureRecognizer(swipeUpGestureRecognizer)
+
+        let swipeDownGestureRecognizer = UISwipeGestureRecognizer(target: self,
+                                                                  action: #selector(swipedDown))
+        swipeDownGestureRecognizer.direction = .down
+        contentView.addGestureRecognizer(swipeDownGestureRecognizer)
     }
 }
 
@@ -107,7 +123,7 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
 
-        state = .collapsed
+        state = .minified
         mapViewModel?.explore(category: HereAPI.Category.allCases[indexPath.row])
     }
 }
@@ -121,7 +137,7 @@ extension SearchViewController: UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        state = .collapsed
+        state = .minified
         mapViewModel?.search(text: textField.text ?? "")
         return true
     }
@@ -132,11 +148,19 @@ extension SearchViewController: UITextFieldDelegate {
 private extension SearchViewController {
 
     @IBAction func openButtonTapped() {
-        state = .expanded
+        expandState()
     }
 
     @IBAction func closeButtonTapped() {
-        state = .collapsed
+        collapseState()
+    }
+
+    @objc func swipedUp() {
+        expandState()
+    }
+
+    @objc func swipedDown() {
+        collapseState()
     }
 }
 
@@ -144,19 +168,29 @@ private extension SearchViewController {
 
 private extension SearchViewController {
 
+    func expandState() {
+        state = SearchViewState(rawValue: state.rawValue + 1) ?? state
+    }
+
+    func collapseState() {
+        state = SearchViewState(rawValue: state.rawValue - 1) ?? state
+    }
+
     func updateViewState(animated: Bool = true) {
         view.layoutIfNeeded()
-        if state == .collapsed {
+        if state != .expanded {
             searchTextField.resignFirstResponder()
         }
         UIView.animate(withDuration: animated ? Global.UI.animationDuration : 0.0) {
-            let isCollapsed = self.state == SearchViewState.collapsed
-            self.closeButton.alpha = isCollapsed ? 0.0 : 1.0
-            self.openButton.alpha = isCollapsed ? 1.0 : 0.0
-            self.openButtonIconView.alpha = isCollapsed ? 1.0 : 0.0
-            self.exploreView.alpha = isCollapsed ? 0.0 : 1.0
-            self.expandedLayoutConstraint.priority = isCollapsed ? UILayoutPriority.defaultLow : UILayoutPriority.defaultHigh
-            self.collapsedLayoutConstraint.priority = isCollapsed ? UILayoutPriority.defaultHigh : UILayoutPriority.defaultLow
+            self.contentView.alpha = self.state == SearchViewState.minified ? 0.75 : 1.0
+            self.closeButton.alpha = self.state == SearchViewState.expanded ? 1.0 : 0.0
+            self.openButton.alpha = self.state == SearchViewState.expanded ? 0.0 : 1.0
+            self.openButtonIconView.alpha = self.state == SearchViewState.expanded ? 0.0 : 1.0
+            self.searchView.alpha = self.state != SearchViewState.minified ? 1.0 : 0.0
+            self.exploreView.alpha = self.state == SearchViewState.expanded ? 1.0 : 0.0
+            self.minifiedLayoutConstraint.priority = self.state == SearchViewState.minified ? UILayoutPriority.defaultHigh : UILayoutPriority.defaultLow
+            self.collapsedLayoutConstraint.priority = self.state == SearchViewState.collapsed ? UILayoutPriority.defaultHigh : UILayoutPriority.defaultLow
+            self.expandedLayoutConstraint.priority = self.state == SearchViewState.expanded ? UILayoutPriority.defaultHigh : UILayoutPriority.defaultLow
             self.view.layoutIfNeeded()
         }
     }
