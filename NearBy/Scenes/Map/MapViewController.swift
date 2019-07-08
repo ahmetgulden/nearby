@@ -50,7 +50,11 @@ final class MapViewController: LocationAwareViewController {
     override func coordinatesAreUpdated(_ coordinates: [CLLocationCoordinate2D]) {
         super.coordinatesAreUpdated(coordinates)
 
-        navigateToUserCoordinate(coordinates.last)
+        guard let coordinate = coordinates.last else {
+            nrb_showAlert(withMessage: "Unable to locate your location")
+            return
+        }
+        navigateToUserCoordinate(coordinate)
     }
 
     override func locationsPermissionStateChanged() {
@@ -71,7 +75,11 @@ private extension MapViewController {
             }
 
             switch stateChange {
-            case .itemsReceived:
+            case .loadingStateChanged(let isLoading):
+                UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
+            case .fetchingItemsFailed(let message):
+                strongSelf.nrb_showAlert(withMessage: message)
+            case .itemsFetched:
                 strongSelf.removeAllPins()
                 strongSelf.addItemPins()
                 strongSelf.zoomCamera()

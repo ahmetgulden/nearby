@@ -10,7 +10,9 @@ import Foundation
 
 enum MapStateChange: StateChange {
 
-    case itemsReceived
+    case itemsFetched
+    case loadingStateChanged(isLoading: Bool)
+    case fetchingItemsFailed(message: String)
     case userLocationDetected
 }
 
@@ -58,16 +60,17 @@ extension MapViewModel {
 private extension MapViewModel {
 
     func fetchItems(with request: Request) {
+        emit(.loadingStateChanged(isLoading: true))
         NetworkManager().send(request) { [weak self] (result: NetworkResult<FetchItemResponse>) in
-            switch result {
-            case .success(let response):
-                self?.items = response.results.items
-                DispatchQueue.main.async {
-                    self?.emit(.itemsReceived)
+            DispatchQueue.main.async {
+                self?.emit(.loadingStateChanged(isLoading: false))
+                switch result {
+                case .success(let response):
+                    self?.items = response.results.items
+                    self?.emit(.itemsFetched)
+                case .failure(let error):
+                    self?.emit(.fetchingItemsFailed(message: error.localizedDescription))
                 }
-            case .failure(let error):
-                // TODO
-                break
             }
         }
     }

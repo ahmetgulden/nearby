@@ -57,12 +57,29 @@ final class LocationManager: NSObject {
 extension LocationManager: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        NotificationCenter.default.post(name: Global.Notification.userLocationChanged,
-                                        object: self,
-                                        userInfo: Dictionary.nrb_formUserInfo(from: locations))
+        sendUpdateLocationNotification(userInfo: Dictionary.nrb_formUserInfo(from: locations))
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        sendUpdateLocationNotification(userInfo: nil)
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        sendAuthorizationStateChangeNotification()
+    }
+}
+
+// MARK - Observer notifier
+
+private extension LocationManager {
+
+    func sendUpdateLocationNotification(userInfo: [AnyHashable : Any]?) {
+        NotificationCenter.default.post(name: Global.Notification.userLocationChanged,
+                                        object: self,
+                                        userInfo: userInfo)
+    }
+
+    func sendAuthorizationStateChangeNotification() {
         NotificationCenter.default.post(name: Global.Notification.locationPermissionStateChanged,
                                         object: self,
                                         userInfo: nil)

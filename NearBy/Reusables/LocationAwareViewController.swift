@@ -30,7 +30,8 @@ class LocationAwareViewController: ViewController {
     /// Fired when user coordinates are updated.
     ///
     /// - Parameter coordinates: Updated coordinates. Most recent coordinates are at
-    /// the end of the array.
+    /// the end of the array. If user location can not be found, returns an empty
+    /// array.
     func coordinatesAreUpdated(_ coordinates: [CLLocationCoordinate2D]) {
         // Subclasses can override this method.
     }
@@ -47,10 +48,8 @@ extension LocationAwareViewController {
 
     @objc
     private func locationUpdateHandler(_ notification: NSNotification) {
-        guard let userInfo = notification.userInfo else {
-            return
-        }
-        coordinatesAreUpdated(userInfo.nrb_coordinates)
+        let coordinates = notification.userInfo?.nrb_coordinates ?? []
+        coordinatesAreUpdated(coordinates)
     }
 
     @objc

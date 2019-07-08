@@ -48,6 +48,7 @@
 		0518963A22D2A14000530200 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963922D2A14000530200 /* SearchRequest.swift */; };
 		0518963C22D2A49600530200 /* MapView+Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963B22D2A49600530200 /* MapView+Zoom.swift */; };
 		05DC886D22D3E8CF00E257FB /* ItemAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC886C22D3E8CF00E257FB /* ItemAnnotation.swift */; };
+		05DC886F22D3EF6800E257FB /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC886E22D3EF6800E257FB /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		0518963922D2A14000530200 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		0518963B22D2A49600530200 /* MapView+Zoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+Zoom.swift"; sourceTree = "<group>"; };
 		05DC886C22D3E8CF00E257FB /* ItemAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAnnotation.swift; sourceTree = "<group>"; };
+		05DC886E22D3EF6800E257FB /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 				0518963B22D2A49600530200 /* MapView+Zoom.swift */,
 				05005CB122D083E9004E5351 /* UIButton+Styling.swift */,
 				05005CBB22D098D0004E5351 /* UIColor+CustomColors.swift */,
+				05DC886E22D3EF6800E257FB /* UIViewController+Alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				05005C7622D07DD5004E5351 /* AppDelegate.swift in Sources */,
 				0518963A22D2A14000530200 /* SearchRequest.swift in Sources */,
 				05005CAF22D08339004E5351 /* PermissionGrantViewController.swift in Sources */,
+				05DC886F22D3EF6800E257FB /* UIViewController+Alert.swift in Sources */,
 				05005CDD22D0F5E2004E5351 /* Dictionary+LocationConvertion.swift in Sources */,
 				0518962022D24A6700530200 /* NetworkResult.swift in Sources */,
 				0518962822D256AF00530200 /* FetchItemResponse.swift in Sources */,
