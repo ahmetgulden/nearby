@@ -47,6 +47,7 @@
 		0518963822D29BEE00530200 /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963722D29BEE00530200 /* PassthroughView.swift */; };
 		0518963A22D2A14000530200 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963922D2A14000530200 /* SearchRequest.swift */; };
 		0518963C22D2A49600530200 /* MapView+Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963B22D2A49600530200 /* MapView+Zoom.swift */; };
+		05DC886D22D3E8CF00E257FB /* ItemAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC886C22D3E8CF00E257FB /* ItemAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		0518963722D29BEE00530200 /* PassthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughView.swift; sourceTree = "<group>"; };
 		0518963922D2A14000530200 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		0518963B22D2A49600530200 /* MapView+Zoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+Zoom.swift"; sourceTree = "<group>"; };
+		05DC886C22D3E8CF00E257FB /* ItemAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				05005CD422D0E5A3004E5351 /* InfoView.swift */,
+				05DC886C22D3E8CF00E257FB /* ItemAnnotation.swift */,
 				05005CD822D0F44E004E5351 /* LocationAwareViewController.swift */,
 				0518963722D29BEE00530200 /* PassthroughView.swift */,
 				0518963522D29BA800530200 /* SearchCollectionViewCell.swift */,
@@ -504,6 +507,7 @@
 				0518963622D29BA800530200 /* SearchCollectionViewCell.swift in Sources */,
 				05005CB422D0862B004E5351 /* Permission.swift in Sources */,
 				05005CD522D0E5A3004E5351 /* InfoView.swift in Sources */,
+				05DC886D22D3E8CF00E257FB /* ItemAnnotation.swift in Sources */,
 				0518962D22D25F5600530200 /* HereAPI.swift in Sources */,
 				0518962222D24AC300530200 /* NetworkError.swift in Sources */,
 				05005CD222D0DB56004E5351 /* PermissionState.swift in Sources */,

@@ -10,6 +10,10 @@ import CoreLocation
 import MapKit
 import UIKit
 
+private enum Constants {
+    static let annotationViewReuseID = "annotationViewReuseID"
+}
+
 final class MapViewController: LocationAwareViewController {
 
     @IBOutlet private weak var mapView: MKMapView!
@@ -30,6 +34,7 @@ final class MapViewController: LocationAwareViewController {
         super.viewDidLoad()
 
         mapView.showsUserLocation = true
+        mapView.delegate = self
         mapView.mapType = MKMapType.hybrid
         searchContainerView.addHittableSubview(searchViewController!.contentView)
         searchViewController?.view.isHidden = true
@@ -78,6 +83,7 @@ private extension MapViewController {
 }
 
 // MARK: - MapView Update
+
 private extension MapViewController {
 
     func navigateToUserCoordinate(_ coordinate: CLLocationCoordinate2D?) {
@@ -99,11 +105,7 @@ private extension MapViewController {
 
     func addItemPins() {
         (viewModel.items ?? []).forEach { item in
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: item.position.first!,
-                                                           longitude: item.position.last!)
-            annotation.title = item.title
-            mapView.addAnnotation(annotation)
+            mapView.addAnnotation(ItemAnnotation(item: item))
         }
     }
 
@@ -172,5 +174,27 @@ private extension MapViewController {
         case .notAvailable, .granted:
             return
         }
+    }
+}
+
+// MARK: - MKMapViewDelegate
+
+extension MapViewController: MKMapViewDelegate {
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? ItemAnnotation else {
+            return nil
+        }
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: Constants.annotationViewReuseID)
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation,
+                                                 reuseIdentifier: Constants.annotationViewReuseID)
+            let distanceLabel = UILabel()
+            annotationView?.detailCalloutAccessoryView = distanceLabel
+        }
+
+        (annotationView?.detailCalloutAccessoryView as? UILabel)?.text = annotation.subtitle
+        annotationView?.canShowCallout = true
+        return annotationView
     }
 }
