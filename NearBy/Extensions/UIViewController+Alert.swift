@@ -10,6 +10,9 @@ import UIKit
 
 extension UIViewController {
 
+    /// Shows an alert message with done button.
+    ///
+    /// - Parameter message: Message to be displayed.
     func nrb_showAlert(withMessage message: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
         let doneButton = UIAlertAction(title: "Done", style: .default)

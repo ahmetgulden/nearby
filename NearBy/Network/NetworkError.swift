@@ -8,6 +8,11 @@
 
 import Foundation
 
+/// Error related network operations.
+///
+/// - brokenURL: URL broken error.
+/// - responseError: HTTP Response is not available error.
+/// - decodeError: Decoding failed error.
 enum NetworkError: Error {
 
     case brokenURL

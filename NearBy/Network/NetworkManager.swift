@@ -13,10 +13,16 @@ private enum Constants {
     static let defaultContentType = "application/json"
 }
 
+/// Class for executing network operations.
 final class NetworkManager {
 
     private static let decoder = JSONDecoder()
 
+    /// Sends a request and receives related response.
+    ///
+    /// - Parameters:
+    ///   - request: Request to be sent.
+    ///   - completion: Handler to be executed after task is finished.
     func send<T: Response>(_ request: Request, completion:((NetworkResult<T>) -> ())?) {
         var components = URLComponents(string: request.host.rawValue.appending(request.endpoint))
         var parameters = request.host.additionalParameters

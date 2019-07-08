@@ -8,6 +8,10 @@
 
 import Foundation
 
+/// Result of the network operation.
+///
+/// - success: Success result with object.
+/// - failure: Failure result with error.
 enum NetworkResult<Value> {
 
     case success(response: Value)

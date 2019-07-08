@@ -10,11 +10,16 @@ import MapKit
 
 private enum Constants {
     static let pointRectangleSize = 0.01
-    static let edgePaddingInsets = UIEdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
+    static let edgePaddingInsets = UIEdgeInsets(top: Global.UI.margin,
+                                                left: Global.UI.margin,
+                                                bottom: Global.UI.margin,
+                                                right: Global.UI.margin)
 }
 
 extension MKMapView {
 
+    /// Moves and zooms the map view in a way such that all pins and user location
+    /// are visible.
     func nrb_fitAllAnnotationsAndUser() {
         var zoomRect = MKMapRect.null;
         zoomRect.union(MKMapRect(x: userLocation.coordinate.latitude,
