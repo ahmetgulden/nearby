@@ -14,6 +14,7 @@ private enum Constants {
     static let annotationViewReuseID = "annotationViewReuseID"
 }
 
+/// Main view controller.
 final class MapViewController: LocationAwareViewController {
 
     @IBOutlet private weak var mapView: MKMapView!

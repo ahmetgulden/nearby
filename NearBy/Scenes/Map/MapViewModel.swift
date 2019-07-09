@@ -32,12 +32,20 @@ final class MapViewModel: StatefulViewModel<MapStateChange> {
 
 extension MapViewModel {
 
+    /// Saves the user location.
+    ///
+    /// - Parameters:
+    ///   - latitude: Latitude of user location.
+    ///   - longitude: Longitude of user location.
     func setUserLocation(latitude: Double, longitude: Double) {
         userLatitude = latitude
         userLongitude = longitude
         emit(.userLocationDetected)
     }
 
+    /// Explores the surrondings with category.
+    ///
+    /// - Parameter category: Places with this category to be explored.
     func explore(category: HereAPI.Category) {
         guard let latitude = userLatitude, let longitude = userLongitude else {
             return
@@ -48,6 +56,9 @@ extension MapViewModel {
         fetchItems(with: request)
     }
 
+    /// Searches nearby places with a query.
+    ///
+    /// - Parameter text: Query text.
     func search(text: String) {
         guard let latitude = userLatitude, let longitude = userLongitude else {
             return

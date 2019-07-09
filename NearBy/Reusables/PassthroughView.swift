@@ -8,15 +8,33 @@
 
 import UIKit
 
+/// A view that can pass touches to below views conditionally.
 final class PassthroughView: UIView {
 
     private var hittableSubviews: Set<UIView> = []
 
+    /// Adds the given view to exception list. Views inside this list can be
+    /// hittable.
+    ///
+    /// - Parameter view: View to be added to exception list.
     func addHittableSubview(_ view: UIView) {
         hittableSubviews.formUnion([view])
     }
 
-    func isViewHittable(_ view: UIView?) -> Bool {
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let view = super.hitTest(point, with: event)
+        guard isViewHittable(view) else {
+            return nil
+        }
+        return view
+    }
+}
+
+// MARK: - Helpers
+
+private extension PassthroughView {
+
+    private func isViewHittable(_ view: UIView?) -> Bool {
         guard let view = view else {
             return false
         }
@@ -26,13 +44,5 @@ final class PassthroughView: UIView {
             }
             return isViewHittable(view.superview)
         }
-    }
-
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        let view = super.hitTest(point, with: event)
-        guard isViewHittable(view) else {
-            return nil
-        }
-        return view
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// HTTP method
 enum RequestMethod: String {
     case get = "GET"
     case head = "HEAD"
@@ -20,9 +21,11 @@ enum RequestMethod: String {
     case patch = "PATCH"
 }
 
+/// Enum that has all the hosts that this application reaches.
 enum Host: String {
     case hereApi = "https://places.demo.api.here.com/places/v1/"
 
+    /// Additional parameters needed for requests to reach this host.
     var additionalParameters: [String: String] {
         switch self {
         case .hereApi:
@@ -34,10 +37,18 @@ enum Host: String {
     }
 }
 
+/// Request protocol.
 protocol Request {
 
+    /// Host to be connected.
     var host: Host { get }
+
+    /// Endpoint to be connected.
     var endpoint: String { get }
+
+    /// HTTP method for the connection.
     var method: RequestMethod { get }
+
+    /// Parameters related to the request.
     var parameters: [String: String] { get }
 }

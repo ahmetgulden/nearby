@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Response model protocol for handling network responses.
 protocol Response: Decodable {
     
 }
