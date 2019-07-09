@@ -8,7 +8,7 @@
 
 import CoreData
 
-enum MapStateChange: StateChange {
+enum MapStateChange: StateChange, Equatable {
 
     case itemsFetched
     case loadingStateChanged(isLoading: Bool)
