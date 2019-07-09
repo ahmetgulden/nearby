@@ -6,6 +6,7 @@
 //  Copyright © 2019 Ahmet Gülden. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
 enum Utility {
@@ -23,5 +24,12 @@ enum Utility {
             return
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+
+    static func context() -> NSManagedObjectContext {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Unable to retrieve managed object context")
+        }
+        return appDelegate.persistentContainer.viewContext
     }
 }

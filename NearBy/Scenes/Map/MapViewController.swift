@@ -20,7 +20,7 @@ final class MapViewController: LocationAwareViewController {
     @IBOutlet private weak var searchContainerView: PassthroughView!
 
     private weak var searchViewController: SearchViewController?
-    private let viewModel = MapViewModel()
+    private let viewModel = MapViewModel(context: Utility.context())
     private var locationServicesNotAvailableInfoView: InfoView?
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -73,18 +73,19 @@ private extension MapViewController {
             guard let strongSelf = self else {
                 return
             }
-
-            switch stateChange {
-            case .loadingStateChanged(let isLoading):
-                UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
-            case .fetchingItemsFailed(let message):
-                strongSelf.nrb_showAlert(withMessage: message)
-            case .itemsFetched:
-                strongSelf.removeAllPins()
-                strongSelf.addItemPins()
-                strongSelf.zoomCamera()
-            case .userLocationDetected:
-                strongSelf.searchViewController?.view.isHidden = false
+            DispatchQueue.main.async {
+                switch stateChange {
+                case .loadingStateChanged(let isLoading):
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
+                case .fetchingItemsFailed(let message):
+                    strongSelf.nrb_showAlert(withMessage: message)
+                case .itemsFetched:
+                    strongSelf.removeAllPins()
+                    strongSelf.addItemPins()
+                    strongSelf.zoomCamera()
+                case .userLocationDetected:
+                    strongSelf.searchViewController?.view.isHidden = false
+                }
             }
         }
     }

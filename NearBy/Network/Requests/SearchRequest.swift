@@ -23,14 +23,3 @@ struct SearchRequest: Request {
         ]
     }
 }
-
-//curl \
-//--compressed \
-//-H 'Accept-Encoding:gzip' \
-//-H 'Accept-Language:en-us' \
-//--get 'https://places.demo.api.here.com/places/v1/discover/search' \
-//--data-urlencode 'app_code=AJKnXv84fjrb0KIHawS0Tg' \
-//--data-urlencode 'app_id=DemoAppId01082013GAL' \
-//--data-urlencode 'in=40.7592,-73.9846;r=500' \
-//--data-urlencode 'pretty=true' \
-//--data-urlencode 'q=pharmacy'
