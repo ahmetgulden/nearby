@@ -49,6 +49,7 @@
 		0518963C22D2A49600530200 /* MapView+Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0518963B22D2A49600530200 /* MapView+Zoom.swift */; };
 		0530E03C22D4EFDD00947269 /* DictionaryNetworkParametersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530E03B22D4EFDD00947269 /* DictionaryNetworkParametersTests.swift */; };
 		0530E04022D4F68F00947269 /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530E03F22D4F68F00947269 /* MapViewModelTests.swift */; };
+		0530E04222D4F95300947269 /* PermissionGrantViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530E04122D4F95300947269 /* PermissionGrantViewModelTests.swift */; };
 		05DC886D22D3E8CF00E257FB /* ItemAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC886C22D3E8CF00E257FB /* ItemAnnotation.swift */; };
 		05DC886F22D3EF6800E257FB /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC886E22D3EF6800E257FB /* UIViewController+Alert.swift */; };
 		05DC887322D416F600E257FB /* MapItemPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC887222D416F600E257FB /* MapItemPresentation.swift */; };
@@ -120,6 +121,7 @@
 		0518963B22D2A49600530200 /* MapView+Zoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+Zoom.swift"; sourceTree = "<group>"; };
 		0530E03B22D4EFDD00947269 /* DictionaryNetworkParametersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryNetworkParametersTests.swift; sourceTree = "<group>"; };
 		0530E03F22D4F68F00947269 /* MapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTests.swift; sourceTree = "<group>"; };
+		0530E04122D4F95300947269 /* PermissionGrantViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionGrantViewModelTests.swift; sourceTree = "<group>"; };
 		05DC886C22D3E8CF00E257FB /* ItemAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAnnotation.swift; sourceTree = "<group>"; };
 		05DC886E22D3EF6800E257FB /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		05DC887222D416F600E257FB /* MapItemPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapItemPresentation.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				05005C8D22D07DD6004E5351 /* DictionaryLocationConversionTests.swift */,
 				0530E03B22D4EFDD00947269 /* DictionaryNetworkParametersTests.swift */,
 				0530E03F22D4F68F00947269 /* MapViewModelTests.swift */,
+				0530E04122D4F95300947269 /* PermissionGrantViewModelTests.swift */,
 			);
 			path = ExtensionTests;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 			files = (
 				0530E03C22D4EFDD00947269 /* DictionaryNetworkParametersTests.swift in Sources */,
 				0530E04022D4F68F00947269 /* MapViewModelTests.swift in Sources */,
+				0530E04222D4F95300947269 /* PermissionGrantViewModelTests.swift in Sources */,
 				05005C8E22D07DD6004E5351 /* DictionaryLocationConversionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
