@@ -13,7 +13,7 @@
 		05005C7E22D07DD5004E5351 /* NearBy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05005C7C22D07DD5004E5351 /* NearBy.xcdatamodeld */; };
 		05005C8022D07DD6004E5351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05005C7F22D07DD6004E5351 /* Assets.xcassets */; };
 		05005C8322D07DD6004E5351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05005C8122D07DD6004E5351 /* LaunchScreen.storyboard */; };
-		05005C8E22D07DD6004E5351 /* NearByTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005C8D22D07DD6004E5351 /* NearByTests.swift */; };
+		05005C8E22D07DD6004E5351 /* DictionaryLocationConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005C8D22D07DD6004E5351 /* DictionaryLocationConversionTests.swift */; };
 		05005C9922D07DD6004E5351 /* NearByUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005C9822D07DD6004E5351 /* NearByUITests.swift */; };
 		05005CAF22D08339004E5351 /* PermissionGrantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CAE22D08339004E5351 /* PermissionGrantViewController.swift */; };
 		05005CB222D083E9004E5351 /* UIButton+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05005CB122D083E9004E5351 /* UIButton+Styling.swift */; };
@@ -79,7 +79,7 @@
 		05005C8222D07DD6004E5351 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05005C8422D07DD6004E5351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05005C8922D07DD6004E5351 /* NearByTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearByTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		05005C8D22D07DD6004E5351 /* NearByTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByTests.swift; sourceTree = "<group>"; };
+		05005C8D22D07DD6004E5351 /* DictionaryLocationConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryLocationConversionTests.swift; sourceTree = "<group>"; };
 		05005C8F22D07DD6004E5351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05005C9422D07DD6004E5351 /* NearByUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearByUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05005C9822D07DD6004E5351 /* NearByUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByUITests.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		05005C8C22D07DD6004E5351 /* NearByTests */ = {
 			isa = PBXGroup;
 			children = (
-				05005C8D22D07DD6004E5351 /* NearByTests.swift */,
+				05D651E822D4EB0D00356565 /* ExtensionTests */,
 				05005C8F22D07DD6004E5351 /* Info.plist */,
 			);
 			path = NearByTests;
@@ -369,6 +369,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		05D651E822D4EB0D00356565 /* ExtensionTests */ = {
+			isa = PBXGroup;
+			children = (
+				05005C8D22D07DD6004E5351 /* DictionaryLocationConversionTests.swift */,
+			);
+			path = ExtensionTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -545,7 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05005C8E22D07DD6004E5351 /* NearByTests.swift in Sources */,
+				05005C8E22D07DD6004E5351 /* DictionaryLocationConversionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
